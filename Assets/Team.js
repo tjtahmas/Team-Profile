@@ -228,18 +228,15 @@ class Team {
 </body>
 </html>
 `
-return this.teamString
+fs.writeFileSync('./teamSite.html', this.teamString, 'utf-8', function () {
+    console.log('file successfully wrote!')
+});
+//return this.teamString
     }
 
     //Fix writeFile function
     quit() {
-        console.log(this.teamString);
-        console.log('----------------')
         this.generateHTML();
-        console.log(this.teamString);
-        fs.writeFile('teamSite.html', this.teamString, 'utf-8', function () {
-            console.log('file successfully wrote!')
-        });
         console.log('\nGoodbye!');
         process.exit(0);
     }
