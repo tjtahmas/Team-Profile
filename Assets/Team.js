@@ -4,6 +4,9 @@ const Intern = require('./Intern');
 const Manager = require('./Manager');
 const fs = require('fs');
 
+//Get writeFile to work properly
+//Create Video Tutorial
+
 class Team {
     // might have to add constructor items to hold HTML for each employee type
     // then merge the strings together when the user quits to create the HTML file
@@ -45,7 +48,6 @@ class Team {
             .then(val => {
                 let man = new Manager(val.managerName, val.managerID, val.managerEmail, val.managerOffice)
                 this.manString = man.writeManHTML(this.manString);
-                console.log(this.manString);
                 if (val.continue) {
                     this.newMember();
                 } else {
@@ -106,7 +108,6 @@ class Team {
             .then(val => {
                 let eng = new Engineer(val.engineerName, val.engineerID, val.engineerEmail, val.engineerGithub);
                 this.engString = eng.writeEngHTML(this.engString);
-                console.log(this.engString);
                 // create new Engineer
                 // add and call an Engineer method that adds an engineer card to the HTML
                 if (val.continue) {
@@ -149,7 +150,6 @@ class Team {
             .then(val => {
                 let int = new Intern(val.internName, val.internID, val.internEmail, val.internSchool);
                 this.intString = int.writeIntHTML(this.intString);
-                console.log(this.intString);
                 if (val.continue) {
                     this.newMember();
                 } else {
@@ -231,8 +231,13 @@ class Team {
 return this.teamString
     }
 
+    //Fix writeFile function
     quit() {
-        fs.writeFile('teamSite.html', this.generateHTML() , 'utf-8', function () {
+        console.log(this.teamString);
+        console.log('----------------')
+        this.generateHTML();
+        console.log(this.teamString);
+        fs.writeFile('teamSite.html', this.teamString, 'utf-8', function () {
             console.log('file successfully wrote!')
         });
         console.log('\nGoodbye!');
