@@ -1,7 +1,9 @@
-const Team = require('./Team');
+const Member = require('./Member');
 
-class Intern extends Team {
+class Intern extends Member {
     constructor(school){
         this.school = school;
     }
 }
+
+module.exports = Intern;

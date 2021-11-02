@@ -1,7 +1,9 @@
-const Team = require('./Team');
+const Member = require('./Member');
 
-class Engineer extends Team {
+class Engineer extends Member {
     constructor(github){
         this.github = github;
     }
 }
+
+module.exports = Engineer;
