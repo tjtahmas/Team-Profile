@@ -10,7 +10,7 @@ class Intern extends Member {
     }
     writeIntHTML(intString){
         intString = intString.concat(`
-        <div class="card" style="width: 18rem;">
+        <div class="col-md-2 card" style="width: 18rem;">
                 <div class="card-body">
                     <h5 class="card-title">${this.name}</h5>
                     <br />
