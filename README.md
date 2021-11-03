@@ -12,7 +12,9 @@ The Team Member Generator is a prompt-driven HTML-file generator that allows you
 To install the Team Member Generator, first download the files from the Github repo, open a terminal inside the appropriate folder, and run "npm install" (or just install inquirer and fs)
 
 ## Usage
-![Screenshot](/Screenshot.png)
+![Screenshot](Assets\Screenshot.png)
+
+
 To begin creating your team, enter "node index.js" in the terminal. You will first be prompted for the team manager's information. From there, you will repeatedly be asked if you would like to add another team member, and if yes, what type of team member (engineer or intern). You may add as many team members as you like. Upon quitting the program, an HTML file with the name 'teamSite.html' will be generated and added to the folder. Open the file in your broswer to view your team. 
 
 ## Credits
